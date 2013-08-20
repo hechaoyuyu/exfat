@@ -1,0 +1,15 @@
+exFAT: Version 1.2.4
+三星放出的exFAT开源驱动
+http://opensource.samsung.com/
+
+使用方法：
+复制exfat源码到内核源码的fs目录下
+cp -r exfat {kernel_source_dir}/fs/
+
+修改fs/Kconfig，在 source "fs/fat/Kconfig" 下添加 source "fs/exfat/Kconfig"
+vi {kernel_source_dir}/fs/Kconfig +100
+
+修改fs/Makefile，在obj-$(CONFIG_FAT_FS)            += fat/ 下添加 obj-$(CONFIG_EXFAT_FS)          += exfat/
+vi {kernel_source_dir}/fs/Makefile +80
+
+
