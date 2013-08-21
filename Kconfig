@@ -1,3 +1,3 @@
 config EXFAT_FS
 	tristate "EXFAT file system support (exfat)"
-	default m
+	default y
